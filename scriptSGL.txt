@@ -1,0 +1,53 @@
+create schema `dba_gsl`;
+
+CREATE TABLE `dba_gsl`.`t_locataire` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NULL,
+  `prenom` VARCHAR(45) NULL,
+  `contact` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `date_naissance` DATE NULL,
+  `sexe` VARCHAR(45) NULL,
+  `numero_cin` VARCHAR(45) NULL,
+  `type_location` VARCHAR(45) NULL,
+  `id_bi` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+  
+  CREATE TABLE `dba_gsl`.`t_users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NULL,
+  `prenom` VARCHAR(45) NULL,
+  `contact` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `date_naissance` DATE NULL,
+  `sexe` VARCHAR(45) NULL,
+  `adresse` VARCHAR(45) NULL,
+  `login` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `type_compte` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+  CREATE TABLE `dba_gsl`.`t_payement` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date_payement` DATE NULL,
+  `montant` DOUBLE NULL,
+  `nom_locataire` VARCHAR(45) NULL,
+  `prenom_locataire` VARCHAR(45) NULL,
+  `id_bi` INT NULL,
+  PRIMARY KEY (`id`));
+  
+  CREATE TABLE `dba_gsl`.`t_bienimmobilier` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `adresse` VARCHAR(45) NULL,
+  `loyer` DOUBLE NULL,
+  `nombre_piece` INT NULL,
+  `details` VARCHAR(45) NULL,
+  `meuble` VARCHAR(45) NULL,
+  `type` VARCHAR(45) NULL,
+  `status` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+
+insert into dba_gsl.t_users values(1, 'Koita', 'Gaoussou', '77 756 50 42', 'gaoussou.koita.etu@esmt.sn', '2000-01-02', 'Homme', 'Fass HLM', 'gaoussou', 'gaoussou', 'Administrateur');
+insert into dba_gsl.t_users values(2, 'Zakari', 'Maigogue', '76 270 24 55', 'zakari.maigogue.etu@esmt.sn', '2000-01-02', 'Homme', 'Ouest Foire', 'zakari', 'zakari', 'Gestionnaire');
